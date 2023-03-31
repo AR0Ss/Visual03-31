@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <h>
 using namespace std;
 
 class Hammubarankana
@@ -50,10 +50,42 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1},
 	};
 
-	while (true)
+	int PlayerY = 1;
+	int PlayerX = 1;
+	bool blsRunning = true;
+
+	while (true) //GameLoop
 	{
-		int PlayerY = 1;
-		int PlayerX = 1;
+		
+		//Frame
+		
+		//Input();
+		char Key;
+		Key = _getch();
+
+		//Tick();
+		if (Key == 'd')
+		{
+			PlayerX++;
+		}
+		else if (Key == 'a')
+		{
+			PlayerX--;
+		}
+		else if (Key == 'w')
+		{
+			PlayerY--;
+		}
+		else if (Key == 's')
+		{
+			PlayerY++;
+		}
+		else if (Key == 'q')
+		{
+			blsRunning = false;
+		}
+		//Render();
+		system("cls");
 
 		for (int Y = 0; Y < 10; ++Y)
 		{
@@ -74,7 +106,7 @@ int main()
 			}
 			cout << endl;
 		}
-		system("cls");
+		
 	}
 		
 	return 0;

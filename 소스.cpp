@@ -50,20 +50,32 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1},
 	};
 
-	for (int Y = 0; Y < 10; ++Y)
+	while (true)
 	{
-		for (int X = 0; X < 10; ++X)
+		int PlayerY = 1;
+		int PlayerX = 1;
+
+		for (int Y = 0; Y < 10; ++Y)
 		{
-			if (Map[Y][X] == 1)
+			for (int X = 0; X < 10; ++X)
 			{
-				cout << "#";
+				if (PlayerX == X && PlayerY == Y)
+				{
+					cout << 'P';
+				}
+				else if (Map[Y][X] == 1)
+				{
+					cout << "#";
+				}
+				else if (Map[Y][X] == 0)
+				{
+					cout << ' ';
+				}	
 			}
-			else if (Map[Y][X] == 0)
-			{
-				cout << ' ';
-			}
+			cout << endl;
 		}
-		cout << endl;
+		system("cls");
 	}
+		
 	return 0;
 }
